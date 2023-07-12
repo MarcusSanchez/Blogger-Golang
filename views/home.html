@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blogger</title>
+</head>
+<body>
+    <h1>Blogger | <a href="/create">Create a New Post</a></h1>
+    <hr>
+    {{ if lt (len .posts) 1}}
+        <h1>There are no posts currently. Make one!</h1>
+    {{ else }}
+        {{ range $_, $post := .posts }}
+            <h2>{{ $post.Title }}</h2>
+            <p>{{ $post.Content }}</p>
+            <br>
+        {{ end }}
+    {{ end }}
+</body>
+</html>
+
+
+
+
